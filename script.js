@@ -1,65 +1,75 @@
+var today = new Date();
+var currentDate = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+document.getElementById("currentDay").textContent = currentDate;
+console.log(currentDate);
+let hours = document.querySelectorAll(".hour")
+var nine = document.getElementById("9");
+var ten = document.getElementById("10");
+var eleven = document.getElementById("11");
+var twelve = document.getElementById("12");
+var thirteen = document.getElementById("13");
+var fourteen = document.getElementById("14");
+var fifteen = document.getElementById("15");
+var sixteen = document.getElementById("16");
+var seventeen = document.getElementById("17");
+// hours.classList.add("future");
+console.log(hours);
+
 // function to set the time and change css depending on hour
 function updateTimeBlock(){
-var dayHours = (new Date()).getHours();
-if(dayHours < 9){
-    // var hours = document.querySelectorAll(".hour")
-    // hours.className ="future";
-    document.querySelectorAll(".hour").className = "future";
-}else
+var dayHours = today.getHours();
+console.log(dayHours);
+
+// if(dayHours < 9){
+    
+// }else
 if(dayHours === 9){ 
-    var nine = document.getElementById("9");
-    nine.className = "current";
+    nine.classList.add("present");
 
 }else 
 if(dayHours === 10){
-    nine.className = "past";
-    var ten = document.getElementById("10");
-    ten.className = "current";
+    nine.classList.add("past");
+    ten.classList.add("present");
 
 }else 
 if(dayHours === 11){
-    ten.className = "past";
-    var eleven = document.getElementById("11");
-    eleven.className = "current";
+    ten.classList.add("past");
+    eleven.classList.add("present");
 
 }else
 if(dayHours === 12){
-    eleven.className = "past";
-    var twelve = document.getElementById("12");
-    twelve.className = "current";
+    eleven.classList.add("past");
+    twelve.classList.add("present");
 
 }else
 if(dayHours ===13){
-    twelve.className = "past";
-    var thirteen = document.getElementById("13");
-    thirteen.className = "current";
+    twelve.classList.add("past");
+    thirteen.classList.add("present");
 
 }else
 if(dayHours ===14){
-    thirteen.className = "past";
-    var fourteen = document.getElementById("14");
-    fourteen.className = "current";
+    thirteen.classList.add("past");
+    fourteen.classList.add("present");
+    
 }else
 if(dayHours ===15){
-    fourteen.className = "past";
-    var fifteen = document.getElementById("15");
-    fifteen.className = "current";
+    fourteen.classList.add("past");
+    fifteen.classList.add("present");
 }else
 if(dayHours ===16){
-    fifteen.className = "past";
-    var sixteen = document.getElementById("16");
-    sixteen.className = "current";
+    fifteen.classList.add("past");
+    sixteen.classList.add("present");
 }else
 if(dayHours ===17){
-    sixteen.className = "past";
-    var seventeen = document.getElementById("17");
-    seventeen.className = "current";
+    sixteen.classList.add("past");
+    seventeen.classList.add("present");
 }else{
-    // hours.className = "past";
-    // console.log(hours);
-    document.querySelectorAll(".hour").className = "past";
+    hours.classList.add("past");
+    console.log(hours);
+    document.querySelectorAll(".hour").classList.add("past");
 };
-console.log(dayHours);
+
+
 
 // when time block === time, set class to current
 // time block > time, set class to past
