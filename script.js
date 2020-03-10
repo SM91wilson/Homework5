@@ -2,8 +2,9 @@
 function updateTimeBlock(){
 var dayHours = (new Date()).getHours();
 if(dayHours < 9){
-    var hours = document.querySelectorAll(".hour")
-    hours.className ="future";
+    // var hours = document.querySelectorAll(".hour")
+    // hours.className ="future";
+    document.querySelectorAll(".hour").className = "future";
 }else
 if(dayHours === 9){ 
     var nine = document.getElementById("9");
@@ -56,11 +57,14 @@ if(dayHours ===17){
 }else{
     // hours.className = "past";
     // console.log(hours);
+    document.querySelectorAll(".hour").className = "past";
 };
+console.log(dayHours);
 
 // when time block === time, set class to current
 // time block > time, set class to past
 // time block < time, set class to future
 }
+setInterval(updateTimeBlock, 1000*60);
 updateTimeBlock();
 
